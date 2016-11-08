@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
+import {EdugoraService} from './services/github.service';
 
 @Component({
+    moduleId:module.id,
     selector: 'my-app',
-    template: '<h1>My First Angular App</h1>'
+    templateUrl: 'app.component.html',
+    providers: [EdugoraService]
 })
-export class AppComponent { }
+export class AppComponent {}
