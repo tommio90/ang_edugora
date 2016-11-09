@@ -1,11 +1,42 @@
 
-<div>
 
-    <div *ngFor="let object of getWord, let i=index">{{i+1}} - {{object.hanzi}}-{{object.pinyin}} - {{object.translation}} </div>
+   <div class="col-md-12">
+        <form>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Enter A word" name="word" [(ngModel)]="word" (keyup)="searchWord()">    
+            </div>    
+        </form>    
+    </div>
 
     
-     
-</div>
+      <!--<div class="col-md-12">
+        <form>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Enter A word" name="hanzi" [(ngModel)]="hanzi" (keyup)="addWord(）">    
+            </div>    
+        </form>    
+    </div>-->
+
+
+
+
+
+        <label for="hanzi">Word</label>
+        <input type="text" id="hanzi" #hanzi>
+
+        <button (click)="onSubmit(hanzi.value)">Submit</button>
+
+   
+   
+    <div *ngFor="let object of getWord, let i=index">
+        
+        
+         {{i+1}} - {{object.hanzi}}-{{object.pinyin}} - {{object.translation}}
+        
+     </div>
+
+    
+  
 
 
 

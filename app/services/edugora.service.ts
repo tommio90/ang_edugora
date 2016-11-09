@@ -9,12 +9,28 @@ export class EdugoraService{
     constructor(private _http:Http){
         console.log('Edugora Service Ready...');
        this.word = '';
+
     }
     
     getWord(){
         return this._http.get('http://localhost:3000/wordbook?q='+this.word);
             .map(res => res.json())
     }
+
+    updateWord(word:word){
+        this.word = word;
+    }
+
+    postWord(wordSend: any) {
+        const body = JSON.stringify(wordSend);
+        const headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        return this._http.post('http://localhost:3000/wordbook', body, {
+        headers: headers
+        })
+        .map(res => res.json())
+        
+  }
     
     
 

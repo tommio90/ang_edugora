@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {EdugoraService} from './services/github.service';
+import {EdugoraService} from './services/edugora.service';
 
 @Component({
     moduleId:module.id,
