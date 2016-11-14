@@ -30,6 +30,12 @@ export class ProfileComponent {
         );
   }
 
+
+  saveJWT(){
+      
+
+  }
+
   
     
         
