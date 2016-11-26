@@ -16,7 +16,7 @@ export class EdugoraService{
     //WORDS stuff
     
     getWord(){
-        return this._http.get('http://localhost:3003/worddb?qu='+this.word);
+        return this._http.get('http://ec2-54-251-160-10.ap-southeast-1.compute.amazonaws.com:9000/cedict1?qu='+this.word);
             .map(res => res.json())
     }
 
@@ -28,7 +28,7 @@ export class EdugoraService{
         const body = JSON.stringify(wordSend);
         const headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        return this._http.post('http://localhost:3003/wordbook', body, {
+        return this._http.post('http://localhost:3003/wordb', body, {
         headers: headers
         })
         .map(res => res.json())
@@ -43,7 +43,7 @@ export class EdugoraService{
         const body = JSON.stringify(user);
         const headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        return this._http.post('http://localhost:3003/users/login', body, {
+        return this._http.post('http://edugoraeroku.ap-southeast-1.elasticbeanstalk.com/users/login', body, {
         headers: headers
         })
         .map(res => res.json())

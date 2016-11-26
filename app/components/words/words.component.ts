@@ -13,6 +13,7 @@ export class WordsComponent {
     getWord=[];
     word: string;
     spelling: string;
+    display: string;
     
         
    constructor(private _edugoraService :EdugoraService){
@@ -34,6 +35,18 @@ export class WordsComponent {
 
  onSubmit(hanzi: string) {
        console.log(hanzi);
+        // this._edugoraService.postWord({hanzi: hanzi})
+        
+        // .subscribe(
+        //     data => console.log(data),
+        //     error => console.log(error)
+        // );
+  }
+
+   onClick(hanzi: string) {
+       
+       this.display = hanzi;
+
         // this._edugoraService.postWord({hanzi: hanzi})
         
         // .subscribe(
