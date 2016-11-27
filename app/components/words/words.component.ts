@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 @Component({
     moduleId: module.id,
     selector: 'words',
+    styleUrls: ['words.style.css'],
     templateUrl: 'words.component.html'
 })
 export class WordsComponent {
